@@ -4,8 +4,6 @@
 
 package com.mycompany.refeitorioii;
 
-import com.mycompany.model.bean.Aluno;
-import com.mycompany.model.dao.alunoDAO;
 import com.mycompany.view.LoginAluno;
 
 

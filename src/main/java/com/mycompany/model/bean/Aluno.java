@@ -25,6 +25,7 @@ public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
+    private Image fotoAluno;
     private String matricula;
     private String nome;
     private String senha;
@@ -35,6 +36,14 @@ public class Aluno {
 
     public void setId(Long Id) {
         this.Id = Id;
+    }
+
+    public Image getFotoAluno() {
+        return fotoAluno;
+    }
+
+    public void setFotoAluno(Image fotoAluno) {
+        this.fotoAluno = fotoAluno;
     }
 
     

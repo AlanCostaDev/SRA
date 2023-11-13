@@ -100,7 +100,7 @@ public class LoginAluno extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-      login();
+      login();// executa o metodo login
         
         
 
@@ -110,7 +110,7 @@ public class LoginAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTSenhaActionPerformed
-login();
+login();// executa o metodo login
     }//GEN-LAST:event_jTSenhaActionPerformed
 
     private void jTMatriculaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTMatriculaFocusGained
@@ -161,21 +161,22 @@ login();
     // End of variables declaration//GEN-END:variables
 
     private void login() {
-          alunoDAO aluno = new alunoDAO();
-          List<Aluno> res = aluno.Buscar("login", jTMatricula.getText(), jTSenha.getText());
-          Aluno alu =new Aluno();
+          alunoDAO alunodao = new alunoDAO(); //cria objeto aluno do tipo DAO
+          List<Aluno> res ;//Litas de objetos aluno
+         res = alunodao.Buscar("login", jTMatricula.getText(), jTSenha.getText());//verifica se o banco de dados tem a matricula e senha
+          Aluno aluno =new Aluno();
           
-          alu = res.get(0);
+          aluno = res.get(0);//Pega o primero resultado da lista e atribui no objeto aluno
           
-          try{if(res.size() ==1){
+          try{if(res.size() ==1){ // testa se o resultado da lista e unitario
                            
               TelaConfirmacao conf = new TelaConfirmacao();
-              conf.recebe(alu);
+              conf.recebe(aluno);//passa o objeto aluno pra a proxima tela
               
-                      conf.setVisible(true);
+                      conf.setVisible(true);//chama a tela confirmação
                      
                       
-                 this.dispose();
+                 this.dispose();//fecha a tela atual
                       
               
           }else{

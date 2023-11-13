@@ -6,6 +6,7 @@ package com.mycompany.view;
 
 import com.mycompany.model.bean.Aluno;
 import com.mycompany.model.dao.alunoDAO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,13 +36,13 @@ public class TelaAluno extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTId = new javax.swing.JTextField();
         jTMatricula = new javax.swing.JTextField();
         jTNome = new javax.swing.JTextField();
         jTSenha = new javax.swing.JTextField();
         jCTurno = new javax.swing.JComboBox<>();
         jCTurma = new javax.swing.JComboBox<>();
         jBSalvar = new javax.swing.JButton();
+        jLid = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,13 +89,17 @@ public class TelaAluno extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTNome, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTNome, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jLid))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jLabel6)
@@ -107,10 +112,10 @@ public class TelaAluno extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLid))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -145,6 +150,24 @@ public class TelaAluno extends javax.swing.JFrame {
 
     private void jBSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalvarActionPerformed
        
+        Aluno naluno = new Aluno();
+        alunoDAO dao = new alunoDAO();
+        //naluno.setId(Long.valueOf(jLid.getText()));
+        naluno.setMatricula(jTMatricula.getText());
+        naluno.setNome(jTNome.getText());
+        naluno.setSenha(jTSenha.getText());
+        naluno.setTurma(jCTurma.getSelectedItem().toString());
+        naluno.setTurno(jCTurno.getSelectedItem().toString());
+        
+        try{
+            dao.salva(naluno);
+            JOptionPane.showMessageDialog(null,"Salvo com Sucesso");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
+        
+        
     }//GEN-LAST:event_jBSalvarActionPerformed
 
     /**
@@ -192,7 +215,7 @@ public class TelaAluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTId;
+    private javax.swing.JLabel jLid;
     private javax.swing.JTextField jTMatricula;
     private javax.swing.JTextField jTNome;
     private javax.swing.JTextField jTSenha;

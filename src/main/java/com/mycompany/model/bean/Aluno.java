@@ -30,7 +30,7 @@ public class Aluno {
     private String senha;
     private String turno;
     private String turma;
-    private byte[] foto;
+   
 
     public Long getId() {
         return Id;
@@ -80,23 +80,9 @@ public class Aluno {
         this.turma = turma;
     }
 
-    public byte[] getFoto() {
-        return foto;
-    }
 
-    public void setFoto(byte[] foto) {
-        this.foto = foto;
-    }
 
-    public Aluno(Long Id, String matricula, String nome, String senha, String turno, String turma, byte[] foto) {
-        this.Id = Id;
-        this.matricula = matricula;
-        this.nome = nome;
-        this.senha = senha;
-        this.turno = turno;
-        this.turma = turma;
-        this.foto = foto;
-    }
+ 
 
   
 

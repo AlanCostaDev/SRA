@@ -6,7 +6,6 @@ package com.mycompany.refeitorioii;
 
 import com.mycompany.view.LoginAluno;
 
-
 /**
  *
  * @author alan
@@ -14,7 +13,8 @@ import com.mycompany.view.LoginAluno;
 public class RefeitorioII {
 
     public static void main(String[] args) {
-        
+
+      
           
       LoginAluno log= new LoginAluno();
       log.setVisible(true);

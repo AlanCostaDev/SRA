@@ -163,11 +163,15 @@ login();
     private void login() {
           alunoDAO aluno = new alunoDAO();
           List<Aluno> res = aluno.Buscar("login", jTMatricula.getText(), jTSenha.getText());
-      
+          Aluno alu =new Aluno();
+          
+          alu = res.get(0);
           
           try{if(res.size() ==1){
                            
               TelaConfirmacao conf = new TelaConfirmacao();
+              conf.recebe(alu);
+              
                       conf.setVisible(true);
                      
                       

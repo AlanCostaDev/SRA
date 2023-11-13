@@ -4,6 +4,7 @@
  */
 package com.mycompany.view;
 
+import com.mycompany.model.bean.Aluno;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -30,7 +31,12 @@ public class TelaConfirmacao extends javax.swing.JFrame {
        
         
     }
-    
+    public void recebe(Aluno aluno){
+            jLmatricula.setText(aluno.getMatricula());
+            jlId.setText(aluno.getId().toString());
+            jLNome.setText(aluno.getNome());
+            jLTurno.setText(aluno.getTurno());
+        }
     
     
      public void datas(){

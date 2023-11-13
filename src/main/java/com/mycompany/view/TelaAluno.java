@@ -159,6 +159,7 @@ public class TelaAluno extends javax.swing.JFrame {
         naluno.setTurma(jCTurma.getSelectedItem().toString());
         naluno.setTurno(jCTurno.getSelectedItem().toString());
         
+        
         try{
             dao.salva(naluno);
             JOptionPane.showMessageDialog(null,"Salvo com Sucesso");

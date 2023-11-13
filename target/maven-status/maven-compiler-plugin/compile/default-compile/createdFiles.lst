@@ -7,7 +7,9 @@ com/mycompany/view/TelaConfirmacao$1.class
 com/mycompany/view/LoginAluno$4.class
 com/mycompany/refeitorioii/RefeitorioII.class
 com/mycompany/view/TelaConfirmacao$3.class
+com/mycompany/view/TelaAluno$3.class
 com/mycompany/view/LoginAluno$1.class
+com/mycompany/view/TelaAluno$2.class
 com/mycompany/view/LoginAluno$2.class
 com/mycompany/model/dao/alunoDAO.class
 com/mycompany/view/TelaAluno.class

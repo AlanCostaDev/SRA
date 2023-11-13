@@ -4,7 +4,6 @@
  */
 package com.mycompany.model.bean;
 
-import java.awt.Image;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,10 +24,13 @@ public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    private Image fotoAluno;
+    
     private String matricula;
     private String nome;
     private String senha;
+    private String turno;
+    private String turma;
+    private byte[] foto;
 
     public Long getId() {
         return Id;
@@ -38,17 +40,7 @@ public class Aluno {
         this.Id = Id;
     }
 
-    public Image getFotoAluno() {
-        return fotoAluno;
-    }
-
-    public void setFotoAluno(Image fotoAluno) {
-        this.fotoAluno = fotoAluno;
-    }
-
-    
-
-    public String getMatricula() {
+     public String getMatricula() {
         return matricula;
     }
 
@@ -72,6 +64,45 @@ public class Aluno {
         this.senha = senha;
     }
 
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
+
+    public String getTurma() {
+        return turma;
+    }
+
+    public void setTurma(String turma) {
+        this.turma = turma;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    public Aluno(Long Id, String matricula, String nome, String senha, String turno, String turma, byte[] foto) {
+        this.Id = Id;
+        this.matricula = matricula;
+        this.nome = nome;
+        this.senha = senha;
+        this.turno = turno;
+        this.turma = turma;
+        this.foto = foto;
+    }
+
+  
+
+   
+
+    
    
     
    

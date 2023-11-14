@@ -14,11 +14,11 @@ public class RefeitorioII {
 
     public static void main(String[] args) {
 
-      
+
           
         
-      LoginAluno log= new LoginAluno();
-      log.setVisible(true);
+     LoginAluno log= new LoginAluno();
+     log.setVisible(true);
         
     }
 }

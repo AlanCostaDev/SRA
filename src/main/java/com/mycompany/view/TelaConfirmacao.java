@@ -5,6 +5,8 @@
 package com.mycompany.view;
 
 import com.mycompany.model.bean.Aluno;
+import com.mycompany.model.bean.Pedido;
+import com.mycompany.model.dao.PedidoDAO;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,7 +17,9 @@ import javax.swing.JOptionPane;
  * @author suporte
  */
 public class TelaConfirmacao extends javax.swing.JFrame {
-
+boolean lanche =false;
+boolean almoco = false;
+Aluno alu;
 
     /**
      * Creates new form TelaConfirmacao
@@ -36,6 +40,7 @@ public class TelaConfirmacao extends javax.swing.JFrame {
             jlId.setText(aluno.getId().toString());
             jLNome.setText(aluno.getNome());
             jLTurno.setText(aluno.getTurno());
+            alu = aluno;
         }
     
     
@@ -228,6 +233,7 @@ public class TelaConfirmacao extends javax.swing.JFrame {
         complemento = jLresposta.getText();
         jLresposta.setText("Lanche Solicitado \n" +"; \n "+ complemento);
         jBlanche.setEnabled(false);
+        lanche = true;
     }//GEN-LAST:event_jBlancheActionPerformed
 
     private void jBalmocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBalmocoActionPerformed
@@ -235,11 +241,28 @@ public class TelaConfirmacao extends javax.swing.JFrame {
         complemento = jLresposta.getText();
         jLresposta.setText("Almoço Solicitado \n" +"; \n "+ complemento);
         jBalmoco.setEnabled(false);
+        almoco =true;
     }//GEN-LAST:event_jBalmocoActionPerformed
 
     private void jBconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBconfirmarActionPerformed
        
+        
+        try{
+        Pedido pedido = new Pedido();
+        
+        pedido.setAluno(alu);
+        pedido.setDia(jLdata.getText());
+        pedido.setHora(jLhora.getText());
+        pedido.setAlmoco(almoco);
+        pedido.setLanche(lanche);
+        
+        PedidoDAO pdao = new PedidoDAO();
+        pdao.salvar(pedido);
+        
         JOptionPane.showMessageDialog(null,jLresposta.getText() + " Confirmado" + jLhora.getText());
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
         LoginAluno log = new LoginAluno();
        log.setVisible(true);
        log.setExtendedState(MAXIMIZED_BOTH);

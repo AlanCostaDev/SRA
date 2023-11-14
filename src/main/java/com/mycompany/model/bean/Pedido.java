@@ -20,10 +20,11 @@ import javax.persistence.ManyToOne;
 public class Pedido implements Serializable {
 
     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String dia;
+   
+    private String dias;
     private String hora;
     private boolean lanche;
     private boolean almoco;
@@ -42,11 +43,11 @@ public class Pedido implements Serializable {
     }
 
     public String getDia() {
-        return dia;
+        return dias;
     }
 
     public void setDia(String dia) {
-        this.dia = dia;
+        this.dias = dia;
     }
 
     public String getHora() {

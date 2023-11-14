@@ -3,6 +3,7 @@ package com.mycompany.view;
 
 import com.mycompany.model.bean.Aluno;
 import com.mycompany.model.dao.alunoDAO;
+import com.mycompany.view.TelaConfirmacao;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -93,7 +94,7 @@ public class LoginAluno extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("X");
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -143,7 +144,7 @@ public class LoginAluno extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(51, 51, 51));
         jButton1.setText("Sign Up");
         jButton1.setBorder(null);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -210,27 +211,15 @@ public class LoginAluno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTMatriculaActionPerformed
-=======
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-      login();// executa o metodo login
-        
-        
-
-
-
         // TODO add your handling code here:
     }//GEN-LAST:event_jTMatriculaActionPerformed
 
     private void jTSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTSenhaActionPerformed
         // TODO add your handling code here:
-
-login();// executa o metodo login
-
     }//GEN-LAST:event_jTSenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        login();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -290,26 +279,16 @@ login();// executa o metodo login
           Aluno alu =new Aluno();
           
           alu = res.get(0);
-          alunoDAO alunodao = new alunoDAO(); //cria objeto aluno do tipo DAO
-          List<Aluno> res ;//Litas de objetos aluno
-         res = alunodao.Buscar("login", jTMatricula.getText(), jTSenha.getText());//verifica se o banco de dados tem a matricula e senha
-          Aluno aluno =new Aluno();
           
-          aluno = res.get(0);//Pega o primero resultado da lista e atribui no objeto aluno
-          
-          try{if(res.size() ==1){ // testa se o resultado da lista e unitario
+          try{if(res.size() ==1){
                            
               TelaConfirmacao conf = new TelaConfirmacao();
               conf.recebe(alu);
               
                       conf.setVisible(true);
-
-              conf.recebe(aluno);//passa o objeto aluno pra a proxima tela
-              
-                      conf.setVisible(true);//chama a tela confirmação
                      
                       
-                 this.dispose();//fecha a tela atual
+                 this.dispose();
                       
               
           }else{

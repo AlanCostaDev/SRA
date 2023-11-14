@@ -210,11 +210,23 @@ public class LoginAluno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTMatriculaActionPerformed
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+      login();// executa o metodo login
+        
+        
+
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jTMatriculaActionPerformed
 
     private void jTSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTSenhaActionPerformed
         // TODO add your handling code here:
+
+login();// executa o metodo login
+
     }//GEN-LAST:event_jTSenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -278,16 +290,26 @@ public class LoginAluno extends javax.swing.JFrame {
           Aluno alu =new Aluno();
           
           alu = res.get(0);
+          alunoDAO alunodao = new alunoDAO(); //cria objeto aluno do tipo DAO
+          List<Aluno> res ;//Litas de objetos aluno
+         res = alunodao.Buscar("login", jTMatricula.getText(), jTSenha.getText());//verifica se o banco de dados tem a matricula e senha
+          Aluno aluno =new Aluno();
           
-          try{if(res.size() ==1){
+          aluno = res.get(0);//Pega o primero resultado da lista e atribui no objeto aluno
+          
+          try{if(res.size() ==1){ // testa se o resultado da lista e unitario
                            
               TelaConfirmacao conf = new TelaConfirmacao();
               conf.recebe(alu);
               
                       conf.setVisible(true);
+
+              conf.recebe(aluno);//passa o objeto aluno pra a proxima tela
+              
+                      conf.setVisible(true);//chama a tela confirmação
                      
                       
-                 this.dispose();
+                 this.dispose();//fecha a tela atual
                       
               
           }else{

@@ -34,13 +34,20 @@
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTId" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTMatricula" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
-                          <Component id="jTNome" alignment="0" min="-2" pref="329" max="-2" attributes="0"/>
-                          <Component id="jTSenha" alignment="0" min="-2" pref="209" max="-2" attributes="0"/>
-                          <Component id="jCTurno" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTMatricula" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
+                                  <Component id="jTNome" alignment="0" min="-2" pref="329" max="-2" attributes="0"/>
+                                  <Component id="jTSenha" alignment="0" min="-2" pref="209" max="-2" attributes="0"/>
+                                  <Component id="jCTurno" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="jLid" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -60,10 +67,10 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" max="32767" attributes="0"/>
-                  <Component id="jTId" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLid" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -128,8 +135,6 @@
         <Property name="text" type="java.lang.String" value="Turma:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTId">
-    </Component>
     <Component class="javax.swing.JTextField" name="jTMatricula">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTMatriculaActionPerformed"/>
@@ -173,6 +178,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSalvarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLid">
     </Component>
   </SubComponents>
 </Form>

@@ -10,6 +10,7 @@ com/mycompany/view/TelaConfirmacao.class
 com/mycompany/view/TelaAluno$1.class
 com/mycompany/view/TelaConfirmacao$4.class
 com/mycompany/model/dao/PedidoDAO.class
+com/mycompany/view/TelaRefeitorio$4.class
 com/mycompany/model/bean/Aluno.class
 com/mycompany/view/TelaConfirmacao$1.class
 com/mycompany/view/LoginAluno$4.class
@@ -23,3 +24,4 @@ com/mycompany/model/dao/alunoDAO.class
 com/mycompany/model/bean/Pedido.class
 com/mycompany/view/TelaRefeitorio.class
 com/mycompany/connecta/ConnectionFactory.class
+com/mycompany/view/TelaRefeitorio$3.class

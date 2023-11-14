@@ -6,6 +6,10 @@ package com.mycompany.view;
 
 import com.mycompany.model.bean.Pedido;
 import com.mycompany.model.dao.PedidoDAO;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,28 +25,71 @@ public class TelaRefeitorio extends javax.swing.JFrame {
     public TelaRefeitorio() {
         
         initComponents();
+        datas();
+        
         
     }
 
     private void encherModelo(){
         List<Pedido> lista = null;
         PedidoDAO pdao = new PedidoDAO();
-        lista = pdao.BuscarData("14 de nov. de 2023");
-        lista.size();
         
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Aluno");
-        modelo.addColumn("lanche");
-        modelo.addColumn("almoço");
-        for(Pedido p : lista){
-            String nome = p.getAluno().getNome();
-            String almoco=String.valueOf(p.isAlmoco());
-            String lanche = String.valueOf(p.isLanche());
-            modelo.addRow(new String[]{nome,lanche,almoco});
+        SimpleDateFormat formatar =new SimpleDateFormat("dd/MM/yyyy");
+        String da = formatar.format(jDateC.getDate());
+        lista = pdao.BuscarData(da);
+        jLTotalDeAlunos.setText(String.valueOf(lista.size()));
+        
+        DefaultTableModel modelo = (DefaultTableModel)jTable1.getModel();
+        ((DefaultTableModel)jTable1.getModel()).setRowCount(0);
+        //modelo.addColumn("Aluno");
+       // modelo.addColumn("lanche");
+       // modelo.addColumn("almoço");
+       int al=0,lc=0;
+        for(int i =0;lista.size()>i;i++){
+            Pedido p = lista.get(i);
+            if(p.isAlmoco()==true){
+               al++; 
+            }
+            if(p.isLanche()==true){
+                lc++;
+            }
+              jLlanche.setText(String.valueOf(lc));
+              jLAlmoco.setText(String.valueOf(al));
+            modelo.addRow(new Object[0]);
+            modelo.setValueAt(p.getAluno().getNome(), i, 0);
+            modelo.setValueAt(p.isAlmoco(), i, 1);
+            modelo.setValueAt(p.isLanche(), i, 2);
+            
+            
+            
         }
         
-        jTable1.setModel(modelo);
+       
+       
     }
+    
+     public void datas(){
+                 
+         
+   
+    Thread th = new Thread(new Runnable() { //cria uma thread
+        public void run() {
+          //  while(true) { //roda indefinidamente
+                Date data = Calendar.getInstance().getTime();
+                DateFormat d = DateFormat.getDateInstance(3);
+                DateFormat h = DateFormat.getTimeInstance();
+                
+                jDateC.setDate(data);
+                
+                
+                try {
+                    Thread.sleep(1000); //espera 1 segundo para fazer a nova evolução
+                } catch(InterruptedException ex){
+                }
+           // }
+        }
+    }); th.start();
+        }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,30 +100,22 @@ public class TelaRefeitorio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jToggleButton1 = new javax.swing.JToggleButton();
+        jDateC = new com.toedter.calendar.JDateChooser();
+        jLabel2 = new javax.swing.JLabel();
+        jLTotalDeAlunos = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jLlanche = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLAlmoco = new javax.swing.JLabel();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jFormattedTextField1.setText("jFormattedTextField1");
-
         jLabel1.setText("Data");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Nome", "Estado"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         jToggleButton1.setText("ATUALIZAR");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -85,33 +124,119 @@ public class TelaRefeitorio extends javax.swing.JFrame {
             }
         });
 
+        jDateC.setDateFormatString("d/MM/y");
+        jDateC.setMinSelectableDate(new java.util.Date(-62135755108000L));
+
+        jLabel2.setText("Total de alunos:");
+
+        jLTotalDeAlunos.setText("0");
+
+        jTable1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "Almoço", "Lanche"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jScrollPane2.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setHeaderValue("Nome");
+            jTable1.getColumnModel().getColumn(1).setHeaderValue("Almoço");
+            jTable1.getColumnModel().getColumn(2).setHeaderValue("Lanche");
+        }
+
+        jLabel3.setText("Total  Lanches");
+
+        jLlanche.setText("0");
+
+        jLabel5.setText("Total Almoço");
+
+        jLAlmoco.setText("0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(125, 125, 125)
-                        .addComponent(jToggleButton1)))
-                .addContainerGap(588, Short.MAX_VALUE))
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jDateC, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(jToggleButton1)
+                        .addGap(239, 239, 239)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLTotalDeAlunos))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLlanche))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLAlmoco))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(260, 260, 260))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1)
+                                .addComponent(jToggleButton1))
+                            .addComponent(jDateC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLTotalDeAlunos))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLlanche))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1))
-                .addGap(126, 126, 126)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(201, Short.MAX_VALUE))
+                    .addComponent(jLabel5)
+                    .addComponent(jLAlmoco))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(373, Short.MAX_VALUE))
         );
 
         pack();
@@ -157,9 +282,16 @@ public class TelaRefeitorio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.Box.Filler filler1;
+    private com.toedter.calendar.JDateChooser jDateC;
+    private javax.swing.JLabel jLAlmoco;
+    private javax.swing.JLabel jLTotalDeAlunos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLlanche;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables

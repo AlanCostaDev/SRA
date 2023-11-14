@@ -54,9 +54,9 @@ Aluno alu;
         public void run() {
             while(true) { //roda indefinidamente
                 Date data = Calendar.getInstance().getTime();
-                DateFormat d = DateFormat.getDateInstance();
+                DateFormat d = DateFormat.getDateInstance(3);
                 DateFormat h = DateFormat.getTimeInstance();
-                jLdata.setText(d.format(data));
+                jLdata.setText(d.format(data)   );
                 jLhora.setText(h.format(data));     
                 
                 

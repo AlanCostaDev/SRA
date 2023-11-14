@@ -4,6 +4,11 @@
  */
 package com.mycompany.view;
 
+import com.mycompany.model.bean.Pedido;
+import com.mycompany.model.dao.PedidoDAO;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author alan
@@ -14,9 +19,31 @@ public class TelaRefeitorio extends javax.swing.JFrame {
      * Creates new form TelaRefeitorio
      */
     public TelaRefeitorio() {
+        
         initComponents();
+        
     }
 
+    private void encherModelo(){
+        List<Pedido> lista = null;
+        PedidoDAO pdao = new PedidoDAO();
+        lista = pdao.BuscarData("14 de nov. de 2023");
+        lista.size();
+        
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Aluno");
+        modelo.addColumn("lanche");
+        modelo.addColumn("almoço");
+        for(Pedido p : lista){
+            String nome = p.getAluno().getNome();
+            String almoco=String.valueOf(p.isAlmoco());
+            String lanche = String.valueOf(p.isLanche());
+            modelo.addRow(new String[]{nome,lanche,almoco});
+        }
+        
+        jTable1.setModel(modelo);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,6 +57,7 @@ public class TelaRefeitorio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +78,13 @@ public class TelaRefeitorio extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jToggleButton1.setText("ATUALIZAR");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -60,7 +95,10 @@ public class TelaRefeitorio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(125, 125, 125)
+                        .addComponent(jToggleButton1)))
                 .addContainerGap(588, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -69,7 +107,8 @@ public class TelaRefeitorio extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton1))
                 .addGap(126, 126, 126)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(201, Short.MAX_VALUE))
@@ -77,6 +116,10 @@ public class TelaRefeitorio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        encherModelo();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,5 +161,6 @@ public class TelaRefeitorio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

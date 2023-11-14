@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -29,7 +29,11 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jFormattedTextField1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jFormattedTextField1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                      <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="588" max="32767" attributes="0"/>
           </Group>
@@ -42,6 +46,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jFormattedTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="414" max="-2" attributes="0"/>
@@ -97,5 +102,13 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ATUALIZAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

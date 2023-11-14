@@ -10,6 +10,7 @@ import com.mycompany.model.dao.PedidoDAO;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -257,9 +258,18 @@ Aluno alu;
         pedido.setLanche(lanche);
         
         PedidoDAO pdao = new PedidoDAO();
+        List<Pedido> listaa = pdao.Buscar(alu.getId(), pedido.getDia());
+            
+        if(listaa.size()<1){
         pdao.salvar(pedido);
-        
         JOptionPane.showMessageDialog(null,jLresposta.getText() + " Confirmado" + jLhora.getText());
+        }else{
+         JOptionPane.showMessageDialog(null,"Pedido ja realizado NEsta data");
+        
+        }
+        
+        
+        
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }

@@ -3,7 +3,6 @@ package com.mycompany.view;
 
 import com.mycompany.model.bean.Aluno;
 import com.mycompany.model.dao.alunoDAO;
-import com.mycompany.view.TelaConfirmacao;
 import java.util.List;
 import javax.swing.JOptionPane;
 

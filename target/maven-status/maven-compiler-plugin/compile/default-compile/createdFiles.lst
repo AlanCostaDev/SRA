@@ -1,8 +1,7 @@
 com/mycompany/view/LoginAluno.class
-com/mycompany/view/TelaConfirmacao$5.class
-com/mycompany/view/LoginAluno$5.class
 com/mycompany/view/LoginAluno$3.class
 com/mycompany/view/TelaConfirmacao$2.class
+com/mycompany/view/TelaInicial$4.class
 com/mycompany/view/LoginAluno$1.class
 com/mycompany/view/TelaInicial$3.class
 com/mycompany/view/TelaAluno.class
@@ -16,7 +15,6 @@ com/mycompany/view/TelaRefeitorio$4.class
 com/mycompany/model/bean/Aluno.class
 com/mycompany/view/TelaInicial.class
 com/mycompany/view/TelaConfirmacao$1.class
-com/mycompany/view/LoginAluno$4.class
 com/mycompany/view/TelaRefeitorio$1.class
 com/mycompany/refeitorioii/RefeitorioII.class
 com/mycompany/view/TelaConfirmacao$3.class

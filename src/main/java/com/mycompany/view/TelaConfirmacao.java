@@ -7,7 +7,6 @@ package com.mycompany.view;
 import com.mycompany.model.bean.Aluno;
 import com.mycompany.model.bean.Pedido;
 import com.mycompany.model.dao.PedidoDAO;
-import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -83,6 +82,9 @@ public void recebe(Aluno aluno){
         jLTurno = new javax.swing.JLabel();
         jLNome = new javax.swing.JLabel();
         jLresposta = new javax.swing.JLabel();
+
+        setClosable(true);
+        setMaximizable(true);
 
         jBlanche.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jBlanche.setText("SOLICITAR LANCHE");
@@ -205,7 +207,7 @@ public void recebe(Aluno aluno){
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jBlanche, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jBalmoco, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLresposta, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLresposta))
                 .addGap(78, 78, 78)
                 .addComponent(jLhora)
                 .addGap(28, 28, 28)
@@ -258,8 +260,9 @@ public void recebe(Aluno aluno){
             JOptionPane.showMessageDialog(null, e);
         }
         LoginAluno log = new LoginAluno();
+        getParent().add(log);
         log.setVisible(true);
-        log.setExtendedState(MAXIMIZED_BOTH);
+        
         this.dispose();
     }//GEN-LAST:event_jBconfirmarActionPerformed
 

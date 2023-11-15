@@ -42,6 +42,9 @@ public class LoginAluno extends javax.swing.JInternalFrame {
         jTSenha = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+        setClosable(true);
+
         jPanel2.setBackground(new java.awt.Color(0, 153, 0));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/Icon1.png"))); // NOI18N

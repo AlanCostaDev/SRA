@@ -4,7 +4,6 @@
  */
 package com.mycompany.model.bean;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,23 +20,25 @@ name = "aluno.logar")
 
 
 
-public class Aluno implements Serializable {
+public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Long Id;
     
     private String matricula;
     private String nome;
     private String senha;
     private String turno;
     private String turma;
-   
-
-    public Integer getId() {
+    private String Cpf;
+    private String comprovantederesidência;
+    
+    
+    public Long getId() {
         return Id;
     }
 
-    public void setId(Integer Id) {
+    public void setId(Long Id) {
         this.Id = Id;
     }
 
@@ -80,6 +81,26 @@ public class Aluno implements Serializable {
     public void setTurma(String turma) {
         this.turma = turma;
     }
+    
+    public String getCpf (String Cpf) {
+        return Cpf;
+    }
+    
+    public void setCpf(String Cpf) {
+        this.Cpf = Cpf;
+    }
+    
+    public String getcomprovantederesidência(String comprovantederesidência){
+        return comprovantederesidência;
+    }
+    
+    public void setcomprovantederesidência(String comprovantederesidência){
+        this.comprovantederesidência = comprovantederesidência;
+    }
+}
+
+
+    
 
 
 
@@ -93,4 +114,4 @@ public class Aluno implements Serializable {
    
     
    
-}
+

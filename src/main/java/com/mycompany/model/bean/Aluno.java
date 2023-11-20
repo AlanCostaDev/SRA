@@ -4,7 +4,6 @@
  */
 package com.mycompany.model.bean;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,10 +20,10 @@ name = "aluno.logar")
 
 
 
-public class Aluno implements Serializable {
+public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Long Id;
     
     private String matricula;
     private String nome;
@@ -33,11 +32,11 @@ public class Aluno implements Serializable {
     private String turma;
    
 
-    public Integer getId() {
+    public Long getId() {
         return Id;
     }
 
-    public void setId(Integer Id) {
+    public void setId(Long Id) {
         this.Id = Id;
     }
 

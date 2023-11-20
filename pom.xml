@@ -32,15 +32,5 @@
 		<artifactId>mysql-connector-java</artifactId>
 		<version>8.0.19</version>
 	</dependency>
-        <dependency>
-            <groupId>com.toedter</groupId>
-            <artifactId>jcalendar</artifactId>
-            <version>1.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.netbeans.external</groupId>
-            <artifactId>AbsoluteLayout</artifactId>
-            <version>RELEASE180</version>
-        </dependency>
-    </dependencies>
+</dependencies>
 </project>

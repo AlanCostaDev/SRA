@@ -30,8 +30,10 @@ public class Aluno {
     private String senha;
     private String turno;
     private String turma;
-    private String cpf;
-
+    private String Cpf;
+    private String comprovantederesidência;
+    
+    
     public Long getId() {
         return Id;
     }
@@ -80,14 +82,24 @@ public class Aluno {
         this.turma = turma;
     }
     
-    public getCpf (String cpf) {
-        return cpf;
+    public String getCpf (String Cpf) {
+        return Cpf;
     }
     
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCpf(String Cpf) {
+        this.Cpf = Cpf;
+    }
+    
+    public String getcomprovantederesidência(String comprovantederesidência){
+        return comprovantederesidência;
+    }
+    
+    public void setcomprovantederesidência(String comprovantederesidência){
+        this.comprovantederesidência = comprovantederesidência;
     }
 }
+
+
     
 
 
@@ -102,4 +114,4 @@ public class Aluno {
    
     
    
-}
+

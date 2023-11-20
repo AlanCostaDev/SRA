@@ -72,53 +72,32 @@ public class TelaConfirmacao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLmatricula = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLNome = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLdata = new javax.swing.JLabel();
-        jLhora = new javax.swing.JLabel();
-        jBlanche = new javax.swing.JButton();
-        jBalmoco = new javax.swing.JButton();
         jLresposta = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jBalmoco = new javax.swing.JButton();
+        jLhora = new javax.swing.JLabel();
         jBconfirmar = new javax.swing.JButton();
-        jlId = new javax.swing.JLabel();
+        jBlanche = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLTurno = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLNome = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLmatricula = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLdata = new javax.swing.JLabel();
+        jlId = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel1.setText("Matricula:");
+        jLresposta.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLresposta.setForeground(new java.awt.Color(255, 0, 0));
 
-        jLmatricula.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLmatricula.setText("jLabel2");
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel3.setText("Nome:");
-
-        jLNome.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLNome.setText("jLabel4");
-
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel5.setText("DATA:");
-
-        jLdata.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLdata.setText("jLabel6");
-
-        jLhora.setFont(new java.awt.Font("Liberation Sans", 1, 48)); // NOI18N
-        jLhora.setText("HORA");
-
-        jBlanche.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jBlanche.setText("SOLICITAR LANCHE");
-        jBlanche.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBlancheActionPerformed(evt);
-            }
-        });
-
-        jBalmoco.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jBalmoco.setBackground(new java.awt.Color(255, 153, 153));
+        jBalmoco.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         jBalmoco.setText("SOLICITAR ALMOÇO");
         jBalmoco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,9 +105,11 @@ public class TelaConfirmacao extends javax.swing.JFrame {
             }
         });
 
-        jLresposta.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLresposta.setForeground(new java.awt.Color(255, 0, 0));
+        jLhora.setFont(new java.awt.Font("Liberation Sans", 1, 45)); // NOI18N
+        jLhora.setText("HORA");
 
+        jBconfirmar.setBackground(new java.awt.Color(255, 255, 204));
+        jBconfirmar.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jBconfirmar.setText("CONFIRMAR");
         jBconfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,90 +117,132 @@ public class TelaConfirmacao extends javax.swing.JFrame {
             }
         });
 
-        jlId.setText("jLabel2");
+        jBlanche.setBackground(new java.awt.Color(255, 153, 153));
+        jBlanche.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
+        jBlanche.setText("SOLICITAR LANCHE");
+        jBlanche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBlancheActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Turno:");
 
         jLTurno.setText("jLabel4");
+
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel3.setText("Nome:");
+
+        jLNome.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLNome.setText("jLabel4");
+
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel1.setText("Matricula:");
+
+        jLmatricula.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLmatricula.setText("jLabel2");
+
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel5.setText("DATA:");
+
+        jLdata.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLdata.setText("jLabel6");
+
+        jlId.setText("jLabel2");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlId)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLdata))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLmatricula))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLNome))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLTurno))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jLhora, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jBalmoco, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBlanche, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jBconfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(88, 88, 88))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jlId)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jBlanche, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBalmoco, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(jBconfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLdata))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLmatricula))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLNome))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLTurno))
+                        .addGap(39, 39, 39)
+                        .addComponent(jLhora, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jBlanche, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBalmoco, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLhora)
-                    .addComponent(jBconfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(256, 256, 256)
                 .addComponent(jLresposta)
-                .addContainerGap(592, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jlId)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLTurno)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLmatricula)
-                            .addComponent(jLNome))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addGap(41, 41, 41)
-                        .addComponent(jLdata)
-                        .addGap(50, 50, 50))))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(jlId)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLmatricula)
-                    .addComponent(jLabel5)
-                    .addComponent(jLdata))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLNome))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLTurno))
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBalmoco, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBlanche, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addComponent(jLhora)
-                .addGap(51, 51, 51)
-                .addComponent(jLresposta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBconfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(524, 524, 524)
+                .addComponent(jLresposta))
         );
 
-        setSize(new java.awt.Dimension(858, 629));
+        setSize(new java.awt.Dimension(590, 335));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -302,6 +325,7 @@ public class TelaConfirmacao extends javax.swing.JFrame {
     private javax.swing.JLabel jLhora;
     public javax.swing.JLabel jLmatricula;
     private javax.swing.JLabel jLresposta;
+    private javax.swing.JPanel jPanel1;
     public javax.swing.JLabel jlId;
     // End of variables declaration//GEN-END:variables
 }

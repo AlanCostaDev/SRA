@@ -4,7 +4,7 @@
  */
 package com.mycompany.model.bean;
 
-import java.awt.Image;
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,34 +21,42 @@ name = "aluno.logar")
 
 
 
-public class Aluno {
+public class Aluno implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
-    private Image fotoAluno;
+    private Integer Id;
+    
     private String matricula;
     private String nome;
     private String senha;
+    private String turno;
+    private String turma;
+   
+    //construtor padrão
+    public Aluno(){
+        
+    }
+    
+    //construtor personalizado
+    public Aluno(String matricula,String nome, String senha, String turno, String turma){
+        this.matricula = matricula;
+        this.nome = nome;
+        this.senha = senha;
+        this.turno = turno;
+        this.turma = turma;
+    }
+   
+    
 
-    public Long getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(Long Id) {
+    public void setId(Integer Id) {
         this.Id = Id;
     }
 
-    public Image getFotoAluno() {
-        return fotoAluno;
-    }
-
-    public void setFotoAluno(Image fotoAluno) {
-        this.fotoAluno = fotoAluno;
-    }
-
-    
-
-    public String getMatricula() {
+     public String getMatricula() {
         return matricula;
     }
 
@@ -72,6 +80,42 @@ public class Aluno {
         this.senha = senha;
     }
 
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
+
+    public String getTurma() {
+        return turma;
+    }
+
+    public void setTurma(String turma) {
+        this.turma = turma;
+    }
+    
+    //metodo de autenticação
+    public boolean autenticar(String matricula, String senha){
+        return this.matricula.equals(matricula) && this.senha.equals(senha);
+    }
+    
+    //metodo auxiliar para formatar a exibição dos dados do aluno
+    public String formatarExibicao(){
+        return "nome: " + nome + ", matricula: " + matricula + ", turno: " + turno + ", turma: " + turma;
+    }
+    
+
+
+
+ 
+
+  
+
+   
+
+    
    
     
    

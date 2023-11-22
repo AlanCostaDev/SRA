@@ -71,20 +71,51 @@ public void recebe(Aluno aluno){
         jBlanche = new javax.swing.JButton();
         jBalmoco = new javax.swing.JButton();
         jLhora = new javax.swing.JLabel();
-        jBconfirmar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLdata = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jlId = new javax.swing.JLabel();
-        jLmatricula = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLTurno = new javax.swing.JLabel();
-        jLNome = new javax.swing.JLabel();
         jLresposta = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField27 = new javax.swing.JTextField();
+        jTextField25 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jTextField14 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField15 = new javax.swing.JTextField();
+        jTextField16 = new javax.swing.JTextField();
+        jTextField17 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
+        jTextField19 = new javax.swing.JTextField();
+        jTextField20 = new javax.swing.JTextField();
+        jTextField22 = new javax.swing.JTextField();
+        jTextField23 = new javax.swing.JTextField();
+        jTextField24 = new javax.swing.JTextField();
+        jTextField26 = new javax.swing.JTextField();
+        jBconfirmar = new javax.swing.JButton();
+        jLmatricula = new javax.swing.JLabel();
+        jLNome = new javax.swing.JLabel();
+        jLTurno = new javax.swing.JLabel();
+        jLdata = new javax.swing.JLabel();
+        jTextField21 = new javax.swing.JTextField();
 
         setClosable(true);
         setMaximizable(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jBlanche.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jBlanche.setText("SOLICITAR LANCHE");
@@ -93,6 +124,7 @@ public void recebe(Aluno aluno){
                 jBlancheActionPerformed(evt);
             }
         });
+        getContentPane().add(jBlanche, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 318, 214, 101));
 
         jBalmoco.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jBalmoco.setText("SOLICITAR ALMOÇO");
@@ -101,119 +133,158 @@ public void recebe(Aluno aluno){
                 jBalmocoActionPerformed(evt);
             }
         });
+        getContentPane().add(jBalmoco, new org.netbeans.lib.awtextra.AbsoluteConstraints(891, 318, 229, 102));
 
         jLhora.setFont(new java.awt.Font("Liberation Sans", 1, 48)); // NOI18N
         jLhora.setText("HORA");
+        getContentPane().add(jLhora, new org.netbeans.lib.awtextra.AbsoluteConstraints(532, 498, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel1.setText("Matricula:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 58, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("Turno:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 142, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel3.setText("Nome:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 100, -1, -1));
+
+        jLresposta.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLresposta.setForeground(new java.awt.Color(255, 0, 0));
+        getContentPane().add(jLresposta, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 420, 348, -1));
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 62, 190, 20));
+        getContentPane().add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, 20));
+        getContentPane().add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 102, 250, 20));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 60, 190, -1));
+
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel6.setText("DATA:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 60, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/Icons/undraw_Performance_overview_re_mqrq.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1220, 780));
+
+        jTextField4.setText("jTextField4");
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
+
+        jTextField5.setText("jTextField5");
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+
+        jTextField6.setText("jTextField6");
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+
+        jTextField7.setText("jTextField7");
+        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+
+        jTextField8.setText("jTextField8");
+        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 140, 90, 30));
+
+        jTextField9.setText("jTextField9");
+        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
+
+        jScrollPane1.setViewportView(jTextPane1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 90, -1));
+
+        jTextField10.setText("jTextField10");
+        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+
+        jTextField11.setText("jTextField11");
+        jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 120, 30));
+
+        jTextField12.setText("jTextField12");
+        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+
+        jTextField13.setText("jTextField13");
+        jPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+
+        jTextField14.setText("jTextField14");
+        jPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
+
+        jTextField3.setText("jTextField1");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 190, -1));
+
+        jTextField15.setText("jTextField15");
+        jPanel1.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 190, -1));
+
+        jTextField16.setText("jTextField16");
+        jPanel1.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+
+        jTextField17.setText("jTextField17");
+        jPanel1.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
+
+        jTextField18.setText("jTextField18");
+        jPanel1.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
+
+        jTextField19.setText("jTextField19");
+        jPanel1.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
+
+        jTextField20.setText("jTextField20");
+        jPanel1.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
+
+        jTextField22.setText("jTextField22");
+        jPanel1.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
+
+        jTextField23.setText("jTextField23");
+        jPanel1.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 230, -1));
+
+        jTextField24.setText("jTextField24");
+        jPanel1.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+
+        jTextField26.setText("jTextField26");
+        jPanel1.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 120, -1));
+
+        jBconfirmar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jBconfirmar.setText("CONFIRMAR");
         jBconfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBconfirmarActionPerformed(evt);
             }
         });
+        jPanel1.add(jBconfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 580, 144, 65));
 
-        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel6.setText("DATA:");
-
-        jLdata.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLdata.setText("jLabel6");
-
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel1.setText("Matricula:");
-
-        jlId.setText("jLabel2");
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 780));
 
         jLmatricula.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLmatricula.setText("jLabel2");
-
-        jLabel2.setText("Turno:");
-
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel3.setText("Nome:");
-
-        jLTurno.setText("jLabel4");
+        getContentPane().add(jLmatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 150, -1));
 
         jLNome.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLNome.setText("jLabel4");
+        getContentPane().add(jLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 100, -1, -1));
 
-        jLresposta.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLresposta.setForeground(new java.awt.Color(255, 0, 0));
+        jLTurno.setText("jLabel4");
+        getContentPane().add(jLTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 142, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jBlanche, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
-                .addComponent(jLresposta, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(128, 128, 128)
-                .addComponent(jBalmoco, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(528, 528, 528)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jBconfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLhora))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlId)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLTurno)
-                            .addComponent(jLmatricula)
-                            .addComponent(jLNome))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLdata)
-                .addGap(168, 168, 168))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLdata)
-                            .addComponent(jLabel6)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jlId)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLmatricula))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLNome))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLTurno))))
-                .addGap(160, 160, 160)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jBlanche, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jBalmoco, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLresposta))
-                .addGap(78, 78, 78)
-                .addComponent(jLhora)
-                .addGap(28, 28, 28)
-                .addComponent(jBconfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                .addGap(125, 125, 125))
-        );
+        jLdata.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLdata.setText("jLabel6");
+        getContentPane().add(jLdata, new org.netbeans.lib.awtextra.AbsoluteConstraints(989, 47, -1, -1));
+
+        jTextField21.setText("jTextField21");
+        getContentPane().add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -266,6 +337,18 @@ public void recebe(Aluno aluno){
         this.dispose();
     }//GEN-LAST:event_jBconfirmarActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBalmoco;
@@ -276,11 +359,41 @@ public void recebe(Aluno aluno){
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLdata;
     private javax.swing.JLabel jLhora;
     public javax.swing.JLabel jLmatricula;
     private javax.swing.JLabel jLresposta;
-    public javax.swing.JLabel jlId;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField jTextField27;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

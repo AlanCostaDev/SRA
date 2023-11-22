@@ -31,8 +31,12 @@ public class Aluno implements Serializable {
     private String senha;
     private String turno;
     private String turma;
-   
-
+    private String disciplina;
+    private Integer sala; 
+    private Integer cpf;
+    private Integer nota;
+    private Integer falta;
+    
     public Integer getId() {
         return Id;
     }
@@ -81,15 +85,45 @@ public class Aluno implements Serializable {
         this.turma = turma;
     }
 
+      public String getdisciplina() {
+        return disciplina;
+    }
 
-
- 
-
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
+    }
   
+    public Integer getSala() {
+        return sala;
+    }
 
-   
+    public void setsala(Integer sala) {
+        this.sala = sala;
+    }
 
-    
+    public Integer getCpf() {
+        return cpf;
+    }
+
+    public void setcpf(Integer cpf) {
+        this.cpf = cpf;
+    }
+
+    public Integer getNota() {
+        return nota;
+    }
+
+    public void setnota(Integer nota) {
+        this.nota = nota;
+    }
+
+    public Integer getfalta() {
+        return falta;
+    }
+
+    public void setfalta(Integer falta) {
+        this.falta = falta;
+    }
    
     
    

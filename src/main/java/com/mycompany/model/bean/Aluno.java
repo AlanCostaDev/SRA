@@ -28,9 +28,15 @@ public class Aluno implements Serializable {
     
     private String matricula;
     private String nome;
-    private String senha;
+    private String sexo;
+    private Integer nascimento;
+    private String endereco;
+    private String bairro;
+    private Integer telefone;
+    private String curso;
     private String turno;
     private String turma;
+    private String senha;
    
 
     public Integer getId() {
@@ -57,23 +63,63 @@ public class Aluno implements Serializable {
         this.nome = nome;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getSexo() {
+        return sexo;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
-    public String getTurno() {
+    public Integer getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(Integer nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+      public Integer getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(Integer telefone) {
+        this.telefone = telefone;
+    }
+ 
+     public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+     public String getTurno() {
         return turno;
     }
 
     public void setTurno(String turno) {
         this.turno = turno;
     }
-
-    public String getTurma() {
+  
+     public String getTurma() {
         return turma;
     }
 
@@ -81,13 +127,13 @@ public class Aluno implements Serializable {
         this.turma = turma;
     }
 
+    public String getSenha() {
+        return senha;
+    }
 
-
- 
-
-  
-
-   
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     
    

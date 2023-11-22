@@ -4,7 +4,8 @@
 
 package com.mycompany.refeitorioii;
 
-import com.mycompany.view.LoginAluno;
+import com.mycompany.view.TelaInicial;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 
 /**
  *
@@ -14,11 +15,12 @@ public class RefeitorioII {
 
     public static void main(String[] args) {
 
-      
+
           
         
-      LoginAluno log= new LoginAluno();
-      log.setVisible(true);
+     TelaInicial log= new TelaInicial();
+     log.setVisible(true);
+     log.setExtendedState(MAXIMIZED_BOTH);
         
     }
 }

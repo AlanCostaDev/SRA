@@ -10,20 +10,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author alan
  */
 @Entity
-
+@NamedQuery(query = "Select pedido from Pedido pedido where pedido.aluno.Id = :idaluno and pedido.dias = :dia",
+name = "pedido.buscar")
+@NamedQuery(query = "Select pedido from Pedido pedido where pedido.dias = :dia",
+name = "pedido.data")
+//@NamedQuery(query = "Select aluno from Aluno aluno where aluno.matricula = :matricula and aluno.senha= :senha",
+//name = "aluno.logar")
 public class Pedido implements Serializable {
 
     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String dia;
+   
+    private String dias;
     private String hora;
     private boolean lanche;
     private boolean almoco;
@@ -42,11 +49,11 @@ public class Pedido implements Serializable {
     }
 
     public String getDia() {
-        return dia;
+        return dias;
     }
 
     public void setDia(String dia) {
-        this.dia = dia;
+        this.dias = dia;
     }
 
     public String getHora() {
